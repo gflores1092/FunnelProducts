@@ -7,9 +7,9 @@ library(h3forr)
 library(googlesheets4)
 #--------------------------------------------------------------
 #Read data
-addtocart <- read.table('AddToCart.csv', header=TRUE, sep=',', stringsAsFactors=FALSE, allowEscapes=TRUE, quote="\"")
-removecart <- read.table('DropCart.csv', header=TRUE, sep=',', stringsAsFactors=FALSE, allowEscapes=TRUE, quote="\"")
-creorder <- read.table('Buy.csv', header=TRUE, sep=',', stringsAsFactors=FALSE, allowEscapes=TRUE, quote="\"")
+addtocart <- readRDS('addtocart.R')
+removecart <- readRDS('dropcart.R')
+creorder <- readRDS('buycart.R')
 #--------------------------------------------------------------
 #Read map
 peru <- st_read("PEdistritos.kml") %>% st_transform(32718)
